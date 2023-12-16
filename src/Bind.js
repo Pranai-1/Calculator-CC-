@@ -4,7 +4,7 @@ export default class Bind extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "Pranai",
+      name: "",
       submitted: false,
     };
 
@@ -12,6 +12,19 @@ export default class Bind extends React.Component {
     this.x = this.x.bind(this);
   }
 
+  componentDidMount(){
+    this.setState({name:"Pranai"})
+  }
+//because of componentDidMount component gets unmounted, after a fraction of second of rendering the component initially and then 
+//it gets unmounted and then component gets mounted again with state values present in the componentDidMount function
+  componentDidUpdate(prev){
+    if(prev.name!==this.state.name)
+    console.log("Updated")
+  }
+
+  componentWillUnmount(){
+    console.log("unmounted")
+  }
   handler(e) {
     this.setState((prev) => ({
       ...prev,
