@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 
 function Factory(props) {
   const [showHello, setShowHello] = useState(false);
-
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowHello(true);
