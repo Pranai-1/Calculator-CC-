@@ -1,15 +1,17 @@
 import React from "react";
 
 export default class Bind extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {//there is no need to explicitly mention props inside constructor but super() must be mentioned to get 
+    //access to all the methods of React.component class,check the console.log(this)
+  super()
     this.state = {
       name: "",
       submitted: false,
     };
-
+    
     this.handler = this.handler.bind(this);
     this.x = this.x.bind(this);
+    console.log(this)
   }
 
   componentDidMount(){
