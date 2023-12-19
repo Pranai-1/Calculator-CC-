@@ -20,7 +20,8 @@ export default class Calculator extends React.Component {
     }));
   };
 
-  getResult = () => {
+  getResult = () => {//This is arrow function,no need to bind because it will follow lexographical scoping and takes the instance 
+    //of the parent class 
     try {  
       const result = eval(this.state.currentInput);
       if (isNaN(result) || !isFinite(result)) {
