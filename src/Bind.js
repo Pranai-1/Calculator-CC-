@@ -30,7 +30,7 @@ export default class Bind extends React.Component {
   handler(e) {
     this.setState((prev) => ({
       ...prev,
-      name: e.target.value
+      name: e.target.value,submitted:false
     }));
   }
   
