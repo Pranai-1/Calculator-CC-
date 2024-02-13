@@ -41,7 +41,29 @@ export default class Calculator extends React.Component {
     }
   };
 
-  render() {
+  //   async componentDidMount() {
+//     console.log("mount")
+//     this.setState({ username: "in mount" });
+//   }
+//   componentDidUpdate() {
+//     console.log("update")
+//     this.setState({ username: "in Update" });//This will cause infinite render
+//   }
+
+    //  componentDidMount() {
+    //     this.timer=setInterval(()=>{console.log("mounting")},3000)//if we dont clear this interval it will be present in the browser 
+        //environment irrespective of whether this current component gets unmounted or not
+    //   }
+    //   componentWillUnmount(){
+    //     clearInterval(this.timer)
+    //   }
+
+    x=async()=>{
+      console.log(10)
+   }
+   render() {//This will gets called for initial render and renders after state change,if no state change
+    //in lifecycle methods,this wont get called 
+   // console.log(this.x())//Promise {<fulfilled>: undefined
     return (
       <div className="w-screen h-screen bg-slate-100 flex flex-col justify-center items-center">
         <p className="text-orange-600 font-bold text-2xl mb-4">Welcome Here!</p>
